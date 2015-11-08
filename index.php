@@ -7,7 +7,7 @@ function ssd($array)
  $avg = array_sum($array)/count($array);
  //各値の平均値と差の二乗を算出
  $diff_array = array();
-   foreach ($diff_array as $value)
+   foreach ($array as $value)
    {
      $diff = $value - $avg;
      $diff_array[] = pow($diff, 2);	
@@ -15,7 +15,7 @@ function ssd($array)
  //上記差の二乗の合計を算出
  $diff_total = array_sum($diff_array);
  //平均を算出
- $diff_avg = $diff_total/count($diff_avg);
+ $diff_avg = $diff_total/count($array);
  //標準偏差を算出(平方根を取る)
  $stdev = sqrt($diff_avg);
  //標準偏差を返す
@@ -34,10 +34,10 @@ $max = max($array);
 //最小値
 $min = min($array);
 //標準偏差
-$ssd = ssd;
+$ssd = ssd($array);
 
-echo "個数:" . $cou ."<br>" ;
-echo "最大:" . $max ."<br>" ;
-echo "最小:" . $min ."<br>" ;
-echo "平均:" . number_format($avg, 1) ."<br>" ;
-echo "標準偏差:" . number_format($ssd, 1) ."<br>" ;
+echo "個数:" . $cou ."\n" ;
+echo "最大:" . $max ."\n" ;
+echo "最小:" . $min ."\n" ;
+echo "平均:" . number_format($avg, 1) ."\n" ;
+echo "標準偏差:" . number_format($ssd, 1) ."\n" ;
